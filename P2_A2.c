@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc > 1)
+    if (argc > 2)
     {
         int value = atoi(argv[1]);
         int ShiftValue = atoi(argv[2]);

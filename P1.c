@@ -14,7 +14,6 @@ int main()
     printf("a AND b: %d\n", a & b);
     printf("a OR b: %d\n", a | b);
     printf("a XOR b: %d\n", a ^ b);
-    printf("a XNOR b: %d\n", ~(a ^ b));
 
     printf("\nEnter shifting value:\n");
     scanf("%d", &shift);
