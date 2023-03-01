@@ -1,9 +1,9 @@
 // Remove the wait() and check program execution
 
 #include <stdio.h>
-#include <sys/types.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
 
 int main()
 {
