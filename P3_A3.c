@@ -1,12 +1,13 @@
 // Parent waits for a specific child process to complete
 
 #include <stdio.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <sys/wait.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
-int Process_ID, flag = 1, status;
+
+int Process_ID, status;
 char *message;
 
 void checkProcess(pid_t Process)
