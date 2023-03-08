@@ -6,9 +6,7 @@
 #include<signal.h>
 
 void my_handler(int signal)
-{
 	printf("Problem encountered, %d was pressed\n", signal);
-}
 
 int main()
 {
