@@ -7,7 +7,7 @@
 
 void my_handler(int signal)
 {
-	printf("Problem encountered, %d was pressed", signal);
+	printf("Problem encountered, %d was pressed\n", signal);
 }
 
 int main()
@@ -16,8 +16,7 @@ int main()
 
 	while(1)
 	{
-		printf("Hello");
+		printf("Hello\n");
 		sleep(1);
 	}
-	return 0;
 }
