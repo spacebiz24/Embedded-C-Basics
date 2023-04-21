@@ -9,7 +9,7 @@
 
 char buff[BUFF_SIZE];
 
-void *read_thread(void *arg)
+void *read_thread()
 {
     while (strncmp("stop", buff, 4) != 0)
     {
