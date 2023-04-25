@@ -3,27 +3,27 @@
 ## Software
 
 1. Bit Manipulation
-  i. Shift and logical operations
-  i. Set the 5th bit
-  i. Invert every bit (A1)
-  i. Clear a bit (A2)
-  i. Parsing using argc, argv (A3)
+    1. Shift and logical operations
+    1. Set the 5th bit
+    1. Invert every bit (A1)
+    1. Clear a bit (A2)
+    1. Parsing using argc, argv (A3)
 2. Device Drivers
-  i. Read from Stdin and write to Stdout
-  i. Copy the text from in.txt into out.txt
-  i. Read text from echo.txt and write to another file & to Stdout
+    1. Read from Stdin and write to Stdout
+    1. Copy the text from in.txt into out.txt
+    1. Read text from echo.txt and write to another file & to Stdout
 3. Multi-Processing
-  i. Demonstrate the usage of fork()
-  i. Create a child process and find the PID of the current and its parent process
-  i. Call fork() three times and check the number of processes running (A1)
-  i. Create a child process of a child process (A2)
-  i. Parent waiting for a specific child process to complete (A3)
+    1. Demonstrate the usage of fork()
+    1. Create a child process and find the PID of the current and its parent process
+    1. Call fork() three times and check the number of processes running (A1)
+    1. Create a child process of a child process (A2)
+    1. Parent waiting for a specific child process to complete (A3)
 4. Signal Function Calls
-  i. Manipulation of signal function calls to run a custom function
-  i. Ignoring a specific signal function call
+    1. Manipulation of signal function calls to run a custom function
+    1. Ignoring a specific signal function call
 5. Multithreading
-  i. Creation of 2 threads for reading from Stdin and to convert to uppercase
-  i. Using semaphores to prevent undefined behaviour
+    1. Creation of 2 threads for reading from Stdin and to convert to uppercase
+    1. Using semaphores to prevent undefined behaviour
 
 ## Interfacing
 
