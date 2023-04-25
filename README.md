@@ -1,4 +1,5 @@
 # Embedded-Systems-Basics
+A few basic Embedded C Programs built to be run on Linux in case of Software and on the popular ARM7TDMI ( LPC2148 ) in case of Interfacing programs. The Programs are named `P#_#` where `#` denotes the specific program index as shown by the list below.
 
 ## Software
 
@@ -33,7 +34,10 @@
 1. Keypad Interfacing -> 7 Segment Display
 1. Wave Generator using DAC
 1. Keypad Interfacing -> LCD ( Extra )
-1. Stepper Motor( Theory Only )
+1. Stepper Motor ( Theory Only )
 1. ADC ( Theory Only )
 1. I2C ( Theory Only )
 1. UART ( Theory Only )
+
+___
+Made with :heart: by [spacebiz24](https://github.com/spacebiz24) and [Eloquencere](https://github.com/Eloquencere)
