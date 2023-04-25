@@ -29,7 +29,7 @@
 
 1. Blinking LEDs
 1. 4 Digit Counter
-1. Message on an LCD
+1. Display a message on an LCD
 1. Keypad Interfacing -> 7 Segment Display
 1. Wave Generator using DAC
 1. Keypad Interfacing -> LCD ( Extra )
