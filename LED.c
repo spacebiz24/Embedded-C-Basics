@@ -1,33 +1,29 @@
 #include "lpc214x.h"
 #include "stdint.h"
 
-unsigned int delay_ms. led_val;
-unsigned char index;
-unsigned int mvright[] = {0x80808080, 0x40404040, 0x20202020, 0x10101010, 0x08080808, 0x04040404, 0x02020202, 0x01010101, 0x00};
-
-void initLPC(void)
+void Delay(unsigned int delay)
 {
-  PINSEL0 = 0x00L;
-  IO0DIR = 0xFFFFFFFF;
+    for (int i = 0; i <= delay; i++);
 }
 
-void delay(unsigned int dms)
+void init_LPC()
 {
-  delay_ms = dms;
-  while(delay_ms > 0)
-    delay_ms--;
+    PINSEL0 = 0x00L;      // P0.0,..., P0.15 -> GPIO
+    IO0DIR = 0xFFFFFFFFL; // All GPIO -> outputs
 }
 
-void main(void)
+unsigned int mvright[8] = {0x80808080, 0x40404040, 0x20202020, 0x10101010, 0x08080808, 0x04040404, 0x02020202, 0x01010101};
+
+void main()
 {
-  index  = 0;
-  initLPC();
-  while(1)
-  {
-    index &= 0x7;
-    led_val = mvright[index++];
-    IO0SET = led_val;
-    delay(20000);
-    IO0CLR = 0xFFFFFFFF;
-  }
+    init_LPC();
+    int index = 0;
+    while (1)
+    {
+        if (index > 7)
+            index = 0;
+        IO0SET = mvright[index++];
+        Delay(20000);
+        IO0CLR = 0xFFFFFFFF; // does 0xFL work? Long 'F'
+    }
 }
