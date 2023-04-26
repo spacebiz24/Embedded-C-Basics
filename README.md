@@ -29,12 +29,12 @@ A few basic Embedded C Programs built to be run on Linux in case of Software and
 ## Interfacing
 
 1. Blinking LEDs
-1. 4 Digit Counter
+1. 4 Digit counter
 1. Display a message on an LCD
-1. Keypad Interfacing -> 7 Segment Display
-1. Wave Generator using DAC
-1. Keypad Interfacing -> LCD ( Extra )
-1. Stepper Motor ( Theory Only )
+1. Keypad interfacing to a 7 segment display
+1. Wave generator using DAC
+1. Keypad interfacing to an LCD ( Extra )
+1. Stepper motor ( Theory Only )
 1. ADC ( Theory Only )
 1. I2C ( Theory Only )
 1. UART ( Theory Only )
