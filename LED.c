@@ -9,8 +9,7 @@ void delay_by(unsigned int delayVal)
 void init_LPC()
 {
     PINSEL0 = 0x00L;      // P0.0,..., P0.15 -> GPIO
-    IO0DIR = 0xFFFFFFFF; // All GPIO -> outputs 
-    IO0CLR = 0xFFFFFFFF; // does 0xFL work? Long 'F'
+    IO0DIR = 0xFFFFFFFF; // All GPIO -> outputs  // does 0xFL work? Long 'F'
 }
 
 void main()
