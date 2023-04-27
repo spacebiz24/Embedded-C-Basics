@@ -1,28 +1,29 @@
 #include "lpc214x.h"
 #include "stdint.h"
 
-void Delay(unsigned int delay)
+void delay_by(unsigned int delayVal)
 {
-    for (int i = 0; i <= delay; i++);
+    for (int i = 0; i <= delayVal; i++);
 }
 
 void init_LPC()
 {
     PINSEL0 = 0x00L;      // P0.0,..., P0.15 -> GPIO
-    IO0DIR = 0xFFFFFFFFL; // All GPIO -> outputs
+    IO0DIR = 0xFFFFFFFF; // All GPIO -> outputs 
+    IO0CLR = 0xFFFFFFFF; // does 0xFL work? Long 'F'
 }
 
 void main()
 {
     init_LPC();
-    int index = 0; // give a better name
+    int LEDIndex = 0;
     while (1)
     {
-        if (!index)
-            index = 0x80;
-        IO0SET = index;
-        Delay(20000);
-        IO0CLR = 0xFFFFFFFF; // does 0xFL work? Long 'F'
-        index >>= 1;
+        if (!LEDIndex) 
+            LEDIndex = 0x80;
+        IO0SET = LEDIndex;
+        delay_by(20000);
+        IO0CLR = LEDIndex; // Turning off that LED
+        LEDIndex >>= 1;
     }
 }
