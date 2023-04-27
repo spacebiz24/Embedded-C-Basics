@@ -12,18 +12,17 @@ void init_LPC()
     IO0DIR = 0xFFFFFFFFL; // All GPIO -> outputs
 }
 
-unsigned int mvright[8] = {0x80808080, 0x40404040, 0x20202020, 0x10101010, 0x08080808, 0x04040404, 0x02020202, 0x01010101};
-
 void main()
 {
     init_LPC();
-    int index = 0;
+    int index = 0; // give a better name
     while (1)
     {
-        if (index > 7)
-            index = 0;
-        IO0SET = mvright[index++];
+        if (!index)
+            index = 0x80;
+        IO0SET = index;
         Delay(20000);
         IO0CLR = 0xFFFFFFFF; // does 0xFL work? Long 'F'
+        index >>= 1;
     }
 }
