@@ -45,7 +45,6 @@ void SawtoothGen()
 {
     for (sampleVal = 0; sampleVal <= 1023; sampleVal++)
           DACR = sampleVal << 6;
-    sampleVal = 0;
 }
 
 void SquareGen()
