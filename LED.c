@@ -8,8 +8,8 @@ void delay_by(unsigned int delayVal)
 
 void init_LPC()
 {
-    PINSEL0 = 0x0L;   // P0.0,..., P0.15 -> GPIO
-    IO0DIR = ~(0x0); // All GPIO -> outputs
+    PINSEL0 = 0x0; // P0.0,..., P0.15 -> GPIO
+    IO0DIR = ~0x0; // All GPIO -> outputs
 }
 
 void main()
@@ -21,7 +21,7 @@ void main()
         if (!LEDIndex) 
             LEDIndex = 0x80;
         IO0SET = LEDIndex;
-        delay_by(20000);
+        delay_by(10000);
         IO0CLR = LEDIndex; // Turning off that LED
         LEDIndex >>= 1;
     }
