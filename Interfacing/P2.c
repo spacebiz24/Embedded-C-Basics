@@ -1,3 +1,5 @@
+// 4 Digit counter
+
 #include "lpc214x.h"
 #include "stdint.h"
 
