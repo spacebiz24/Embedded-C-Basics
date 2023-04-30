@@ -1,4 +1,4 @@
-// Demonstrate the usage of fork
+// Demonstrate the usage of fork()
 
 #include<stdio.h>
 #include<unistd.h>
