@@ -1,4 +1,4 @@
-// Read text from echo.txt and write to file and console
+// Read text from echo.txt and write to another file & to Stdout
 
 #include<fcntl.h>
 #include<unistd.h>
