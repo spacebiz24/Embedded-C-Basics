@@ -10,7 +10,7 @@ void init_LPC()
 {
     PINSEL0 = 0x0;  // P0.0,..., P0.15 -> GPIO
     IO0DIR = 0xFF0; // P0.0,..., P0.3 -> input, P0.4,...,P0.15 -> output
-    IO0CLR = 0xF0; // sentisising the keyboard
+    IO0SET = 0xF0; // sentisising the keyboard
 }
 
 int leadKey(unsigned int columnVal)
@@ -29,13 +29,15 @@ int RowVal()
 {
     int offset = 0;
     int column;
+    IOCLR = 0x10;
     while (offset < 4)
     {
         column = IO0PIN & 0xF;
         if (column != 0b1111)
             return offset; // found the row
         offset += 4;
-        IO0PIN << = 1;
+        IO0CLR = 0x10;
+        IO0CLR <<= 1;  
     }
 }
 
@@ -53,7 +55,7 @@ void main()
         if (column != 0b1111)
         {
             IO0SET = SevenSegTable[leadKey(column) + RowVal()];
-            IO0CLR = 0xF0; // sentisising the keyboard
+            IO0SET = 0xF0; // sentisising the keyboard
         }
     }
 }
