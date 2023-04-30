@@ -50,7 +50,7 @@ void init_LCD()
 
 void DisplayMsg(char Msg[])
 {
-    for (int character = 0; character <= strlen(Msg); character++)
+    for (int character = 0; character < strlen(Msg); character++)
         LCD_Data(character);
 }
 
