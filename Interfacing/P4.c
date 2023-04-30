@@ -55,7 +55,7 @@ void main()
     while (1)
     {
         IO0CLR = 0xF0; // Sensitise the keyboard
-        while ((IO0PIN & 0xF) != 0b1111); // Wait for a keypress
+        while ((IO0PIN & 0xF) == 0b1111); // Wait for a keypress
         IO0CLR = 0xF << 8; // Clearing the display
         ScanCode = GetScanCode();
         if (ScanCode == NULL) // Couldn't locate the Key
