@@ -23,7 +23,7 @@ int GetScancode()
     int Row = 0b0001;
     while (Row <= 0b1000) // 4 shifts
     {
-        IO0CLR = Row << 4; // Checking that row
+        IO0CLR = Row << 4; // Checking that row , Row is on P0.4
         Column = IO0PIN & 0xF;
         if (Column != 0b1111) // found row
             return ((Row << 4) + Column);
