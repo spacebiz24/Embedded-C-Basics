@@ -1,4 +1,4 @@
-// Wave generator using DAC
+// Signal generator using DAC
 
 #include "lpc214x.h"
 #include "stdint.h"
