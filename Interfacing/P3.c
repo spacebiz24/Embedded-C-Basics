@@ -1,4 +1,4 @@
-Display a message on an LCD
+// Display a message on an LCD
 
 #include "lpc214x.h"
 #include "stdint.h"
