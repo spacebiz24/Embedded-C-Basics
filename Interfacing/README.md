@@ -4,7 +4,7 @@
 1. 4 Digit counter
 1. Display a message on an LCD
 1. Keypad interfacing to a 7 segment display
-1. Wave generator using DAC
+1. Signal generator using DAC
 1. Keypad interfacing to an LCD ( Extra )
 1. Stepper motor ( Theory Only )
 1. ADC ( Theory Only )
