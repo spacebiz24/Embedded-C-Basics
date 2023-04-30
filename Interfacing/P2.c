@@ -24,7 +24,7 @@ unsigned int SevenSegTable[] = {0x3F /*0*/, 0x06 /*1*/, 0x5B /*2*/,
 void display(unisgned int counterVal)
 {
     int displaySel = 0b1;
-    while (displaySel =< 0b1000)
+    while (displaySel <= 0b1000)
     {
         int digit = counterVal % 10; // Getting right most digit
         IO0SET = SevenSegTable[digit];
