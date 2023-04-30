@@ -24,7 +24,7 @@ unsigned int SevenSegTable[] = {0x3F /*0*/, 0x06 /*1*/, 0x5B /*2*/,
 void display(unisgned int counterVal)
 {
     int displaySel = 0b1;
-    while (counterVal != 0)
+    while (displaySel =< 0b1000)
     {
         int digit = counterVal % 10; // Getting right most digit
         IO0SET = SevenSegTable[digit];
@@ -32,8 +32,8 @@ void display(unisgned int counterVal)
         delay_by(100000);
         IO1SET = displaySel; // disabling that display
         IO0CLR = SevenSegTable[digit];
-        displaySel <<= 1;    // selecting the next display
         counterVal /= 10;    // removing the right most digit
+        displaySel <<= 1;    // selecting the next display
     }
 }
 
@@ -45,7 +45,5 @@ void main()
     {
         display(count);
         count++;
-        if(count > 9999)
-            count = 0;
     }
 }
