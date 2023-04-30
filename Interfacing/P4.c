@@ -45,7 +45,7 @@ int Display(int ScanCode)
     int CodeIndex;
     while (ScanCode != ScanCodeTable[CodeIndex])
         CodeIndex++;
-    IO0SET = SevenSegTable[CodeIndex)] << 8;
+    IO0SET = SevenSegTable[CodeIndex)] << 8; // Display is on P0.8 onwards
 }
 
 void main()
