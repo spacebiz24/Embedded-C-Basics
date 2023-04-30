@@ -1,5 +1,5 @@
 // Manipulation of signal function calls to run a custom function
-// Change SIGINT to TSTP, QUIT, ALRM
+// Change SIGINT to TSTP, QUIT, ALRM (A)
 
 #include<stdio.h>
 #include<unistd.h>
