@@ -3,6 +3,9 @@
 #include "lpc214x.h"
 #include "stdint.h"
 
+#define TopRow 0b0001
+#define BottomRow 0b1000
+
 unsigned int ScanCodeTable[] = {0xEE /*0*/, 0xED /*1*/, 0xEB /*1*/, 0xE7 /*3*/,
                                 0xDE /*4*/, 0xDD /*5*/, 0xDB /*6*/, 0xD7 /*7*/,
                                 0xBE /*8*/, 0xBD /*9*/, 0xBB /*A*/, 0xB7 /*B*/,
@@ -26,16 +29,16 @@ void init_LPC()
 
 int GetScancode()
 {
-    int Column;
-    int Row = 0b0001;
-    while (Row <= 0b1000) // 4 shifts
+    int ColumnVal;
+    int CurrentRow = TopRow;
+    while (CurrentRow <= BottomRow)
     {
-        IO0CLR = Row << 4; // Checking that row , Row is on P0.4
-        Column = IO0PIN & 0xF;
-        if (Column != 0b1111) // found row
-            return ((Row << 4) + Column);
-        IO0SET = Row << 4; // Turning on that row
-        Row <<= 1;    // Switching to next row
+        IO0CLR = CurrentRow << 4; // Checking that row , Row is on P0.4
+        ColumnVal = IO0PIN & 0xF;
+        if (ColumnVal != 0b1111) // found row
+            return ((CurrentRow << 4) + ColumnVal);
+        IO0SET = CurrentRow << 4; // Turning on that row
+        CurrentRow <<= 1;  // Going to the next row
     }
     return NULL;
 }
