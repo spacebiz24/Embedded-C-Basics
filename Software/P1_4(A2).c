@@ -1,4 +1,4 @@
-// Clearing a bit
+// Clear a bit
 
 #include <stdio.h>
 #include <stdlib.h>
