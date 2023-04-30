@@ -10,6 +10,7 @@ void init_LPC()
 {
     PINSEL0 = 0x0;  // P0.0,..., P0.15 -> GPIO
     IO0DIR = 0xFF0; // P0.0,..., P0.3 -> input, P0.4,...,P0.15 -> output
+    IO0CLR = 0xF0; // sentisising the keyboard
 }
 
 int leadKey(unsigned int columnVal)
@@ -48,9 +49,11 @@ void main()
     int column;
     while (1)
     {
-        IO0CLR = 0xF0; // sentisising the keyboard
         column = IO0PIN & 0xF;
         if (column != 0b1111)
+        {
             IO0SET = SevenSegTable[leadKey(column) + RowVal()];
+            IO0CLR = 0xF0; // sentisising the keyboard
+        }
     }
 }
