@@ -8,9 +8,9 @@ void delay_by(unsigned int delayVal)
 
 void init_LPC()
 {
-    PINSEL0 = 0x0;
-    IO0DIR = ~0x0;
-    PINSEL1 = 0x80000;
+    PINSEL0 = 0x0; // P0.0,..., P0.15 -> GPIO
+    IO0DIR = 0x0; // All GPIO -> input
+    PINSEL1 = 0x80000; // P0.25 -> DAC output mode
 }
 
 unsigned int SineTable[] = {0, 6, 25, 55, 97, 151, 211, 216, 282, 359, 436, 512,
@@ -63,7 +63,7 @@ void main()
     int WaveSel;
     while (1)
     {
-        WaveSel = IO0PIN & 0b11;
+        WaveSel = IO0PIN & 0b11; // Obtaining values at P0.0 & 1
         if (WaveSel == 0)
             SineGen();
         else if (WaveSel == 1)
