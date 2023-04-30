@@ -1,4 +1,4 @@
-// Set the 5th bit in a value
+// Set the 5th bit
 
 #include <stdio.h>
 #include <stdlib.h>
