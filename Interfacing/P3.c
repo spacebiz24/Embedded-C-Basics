@@ -58,6 +58,9 @@ void main()
 {
     init_LPC();
     init_LCD();
+    DisplayMsg("LCD Initialised");
+    delay_by(10000);
+    LCD_Command(0x01); // clearing the display
     while (1)
         DisplayMsg("Hello World");
 }
