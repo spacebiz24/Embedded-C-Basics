@@ -38,7 +38,7 @@ int GetScancode()
 int Decode(int ScanCode)
 {
     int CodeIndex;
-    while (ScanCode != Scancode[CodeIndex])
+    while (ScanCode != ScanCodeTable[CodeIndex])
         CodeIndex++;
     return CodeIndex;
 }
