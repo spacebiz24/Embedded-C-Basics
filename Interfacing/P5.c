@@ -3,9 +3,6 @@
 #include "lpc214x.h"
 #include "stdint.h"
 
-#define MaxAmplitude 1023
-#define MinAmplitude 0
-
 void delay_by(unsigned int delayVal)
 {
     for (int i = 0; i <= delayVal; i++);
@@ -40,24 +37,24 @@ int sampleVal;
 
 void TraingleGen()
 {
-    for (sampleVal = MinAmplitude; sampleVal <= MaxAmplitude; sampleVal++)
+    for (sampleVal = 0; sampleVal <= 1023; sampleVal++)
         DACR = sampleVal << 6;
-    for (sampleVal = MaxAmplitude; sampleVal >= MinAmplitude; sampleVal--)
+    for (sampleVal = 0; sampleVal >= 1023; sampleVal--)
         DACR = sampleVal << 6;
 }
 
 void SawtoothGen()
 {
-    for (sampleVal = MinAmplitude; sampleVal <= MaxAmplitude; sampleVal++)
+    for (sampleVal = 0; sampleVal <= 1023; sampleVal++)
         DACR = sampleVal << 6;
 }
 
 void SquareGen()
 {
-    sampleVal = MInAmplitude;
+    sampleVal = 0;
     DACR = sampleVal << 6;
     delay_by(200);
-    sampleVal = MaxAmplitude;
+    sampleVal = 1023;
     DACR = sampleVal << 6;
     delay_by(200);
 }
