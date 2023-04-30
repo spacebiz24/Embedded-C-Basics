@@ -1,4 +1,4 @@
-// Copy the text from in.txt into out.txt
+// Copy text from in.txt into out.txt
 
 #include<fcntl.h>
 #include<unistd.h>
