@@ -3,6 +3,11 @@
 #include "lpc214x.h"
 #include "stdint.h"
 
+unsigned int ScanCodeTable[] = {0xEE /*0*/, 0xED /*1*/, 0xEB /*1*/, 0xE7 /*3*/,
+                                0xDE /*4*/, 0xDD /*5*/, 0xDB /*6*/, 0xD7 /*7*/,
+                                0xBE /*8*/, 0xBD /*9*/, 0xBB /*A*/, 0xB7 /*B*/,
+                                0x7E /*C*/, 0x7D /*D*/, 0x7B /*E*/, 0x77 /*F*/};
+
 void delay_by(unsigned int delayVal)
 {
     for (int i = 0; i <= delayVal; i++);
@@ -13,11 +18,6 @@ void init_LPC()
     PINSEL0 = 0x0;  // P0.0,..., P0.15 -> GPIO
     IO0DIR = 0xFF0; // P0.0,..., P0.3 -> input, P0.4,...,P0.15 -> output
 }
-
-unsigned int ScanCodeTable[] = {0xEE /*0*/, 0xED /*1*/, 0xEB /*1*/, 0xE7 /*3*/,
-                                0xDE /*4*/, 0xDD /*5*/, 0xDB /*6*/, 0xD7 /*7*/,
-                                0xBE /*8*/, 0xBD /*9*/, 0xBB /*A*/, 0xB7 /*B*/,
-                                0x7E /*C*/, 0x7D /*D*/, 0x7B /*E*/, 0x77 /*F*/};
 
 int GetScancode()
 {
