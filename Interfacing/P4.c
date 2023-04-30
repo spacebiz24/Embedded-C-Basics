@@ -29,7 +29,7 @@ int GetScancode()
         Column = IO0PIN & 0xF;
         if (Column != 0b1111) // found row
             return ((Row << 4) + Column);
-        IO0SET = Row; // Turning off that row
+        IO0SET = Row << 4; // Turning on that row
         Row <<= 1;    // Switching to next row
     }
     return NULL;
