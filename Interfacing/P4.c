@@ -20,14 +20,14 @@ unsigned int ScanCodeTable[] = {0xEE /*0*/, 0xED /*1*/, 0xEB /*1*/, 0xE7 /*3*/,
 int GetScancode()
 {
     int Column;
-    int Row = 0x10;
-    while (Row <= 0x80) // 4 shifts
+    int Row = 0b0001;
+    while (Row <= 0b1000) // 4 shifts
     {
-        IO0SET = Row; // Checking that row
+        IO0CLR = Row << 4; // Checking that row
         Column = IO0PIN & 0xF;
         if (Column != 0b1111) // found row
-            return ScanCode = (Row << 4) + Column;
-        IO0CLR = Row; // Turning off that row
+            return ((Row << 4) + Column);
+        IO0SET = Row; // Turning off that row
         Row <<= 1;    // Switching to next row
     }
     return NULL;
@@ -38,7 +38,7 @@ int Decode(int ScanCode)
     int CodeIndex;
     while (ScanCode != Scancode[CodeIndex])
         CodeIndex++;
-    return code;
+    return CodeIndex;
 }
 
 unsigned int SevenSegTable[] = {0x3F /*0*/, 0x06 /*1*/, 0x5B /*2*/, 0x4F /*3*/,
@@ -54,10 +54,10 @@ void main()
     {
         IO0CLR = 0xF0; // Sensitise the keyboard
         while ((IO0PIN & 0xF) != 0b1111); // Wait for a keypress
-        IO0CLR = ~0x0; // Clearing the display
+        IO0CLR = 0xF << 8; // Clearing the display
         ScanCode = GetScanCode();
-        if (ScanCode == NULL)
+        if (ScanCode == NULL) // Couldn't locate the Key
             continue;
-        IO0SET = SevenSegTable[Decode(ScanCode)];
+        IO0SET = SevenSegTable[Decode(ScanCode)] << 8; // display is on P0.8
     }
 }
