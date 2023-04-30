@@ -1,4 +1,4 @@
-// Create a child process and find the PID of the current process and its parent process 
+// Create a child process and find the PID of the current and its parent process
 
 #include<stdio.h>
 #include<stdlib.h>
