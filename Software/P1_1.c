@@ -1,4 +1,4 @@
-// Logical and Shift Operations
+// Shift and logical operations
 
 #include <stdio.h>
 
