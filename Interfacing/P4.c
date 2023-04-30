@@ -8,6 +8,11 @@ unsigned int ScanCodeTable[] = {0xEE /*0*/, 0xED /*1*/, 0xEB /*1*/, 0xE7 /*3*/,
                                 0xBE /*8*/, 0xBD /*9*/, 0xBB /*A*/, 0xB7 /*B*/,
                                 0x7E /*C*/, 0x7D /*D*/, 0x7B /*E*/, 0x77 /*F*/};
 
+unsigned int SevenSegTable[] = {0x3F /*0*/, 0x06 /*1*/, 0x5B /*2*/, 0x4F /*3*/,
+                                0x66 /*4*/, 0x6D /*5*/, 0x7D /*6*/, 0x07 /*7*/,
+                                0x7F /*8*/, 0x6F /*9*/, 0x77 /*A*/, 0x7C /*B*/,
+                                0x39 /*C*/, 0x5E /*D*/, 0x79 /*E*/, 0x71 /*F*/};
+
 void delay_by(unsigned int delayVal)
 {
     for (int i = 0; i <= delayVal; i++);
@@ -34,11 +39,6 @@ int GetScancode()
     }
     return NULL;
 }
-
-unsigned int SevenSegTable[] = {0x3F /*0*/, 0x06 /*1*/, 0x5B /*2*/, 0x4F /*3*/,
-                                0x66 /*4*/, 0x6D /*5*/, 0x7D /*6*/, 0x07 /*7*/,
-                                0x7F /*8*/, 0x6F /*9*/, 0x77 /*A*/, 0x7C /*B*/,
-                                0x39 /*C*/, 0x5E /*D*/, 0x79 /*E*/, 0x71 /*F*/};
 
 int Display(int ScanCode)
 {
