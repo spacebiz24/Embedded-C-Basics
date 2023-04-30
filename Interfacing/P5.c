@@ -3,6 +3,9 @@
 #include "lpc214x.h"
 #include "stdint.h"
 
+#define MaxAmplitude 1023
+#define MinAmplitude 0
+
 void delay_by(unsigned int delayVal)
 {
     for (int i = 0; i <= delayVal; i++);
@@ -37,24 +40,24 @@ int sampleVal;
 
 void TraingleGen()
 {
-    for (sampleVal = 0; sampleVal <= 1023; sampleVal++)
+    for (sampleVal = MinAmplitude; sampleVal <= MaxAmplitude; sampleVal++)
         DACR = sampleVal << 6;
-    for (sampleVal = 1023; sampleVal >= 0; sampleVal--)
+    for (sampleVal = MaxAmplitude; sampleVal >= MinAmplitude; sampleVal--)
         DACR = sampleVal << 6;
 }
 
 void SawtoothGen()
 {
-    for (sampleVal = 0; sampleVal <= 1023; sampleVal++)
+    for (sampleVal = MinAmplitude; sampleVal <= MaxAmplitude; sampleVal++)
         DACR = sampleVal << 6;
 }
 
 void SquareGen()
 {
-    sampleVal = 0;
+    sampleVal = MInAmplitude;
     DACR = sampleVal << 6;
     delay_by(200);
-    sampleVal = 1023;
+    sampleVal = MaxAmplitude;
     DACR = sampleVal << 6;
     delay_by(200);
 }
@@ -66,7 +69,6 @@ void main()
     while (1)
     {
         WaveSel = IO0PIN & 0b11; // Obtaining values at P0.0 & 1
-        while (WaveSel == 0 | WaveSel > 0); // Wait until WaveSel is a valid value
         if (WaveSel == 0)
             SineGen();
         else if (WaveSel == 1)
