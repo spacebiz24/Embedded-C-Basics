@@ -48,7 +48,7 @@ void init_LCD()
         LCD_Command(CommandIndex);
     DisplayMsg("LCD Initialised");
     delay_by(10000);
-    LCD_Command(0x01); // clearing the display
+    LCD_Command(0x01); // clear display
 }
 
 void DisplayMsg(char Msg[])
