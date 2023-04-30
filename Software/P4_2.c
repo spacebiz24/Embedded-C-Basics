@@ -1,5 +1,5 @@
 // Ignoring a specific signal function call
-// Change SIGINT to TSTP,STOP
+// Change SIGINT to TSTP,STOP (A)
 
 #include<stdio.h>
 #include<unistd.h>
