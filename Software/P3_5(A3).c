@@ -1,4 +1,4 @@
-// Parent waits for a specific child process to complete
+// Parent waiting for a specific child process to complete
 
 #include <stdio.h>
 #include <stdlib.h>
