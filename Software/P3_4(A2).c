@@ -1,4 +1,4 @@
-// Create the child of a child process
+// Create a child process of a child process
 
 #include <stdio.h>
 #include <sys/types.h>
