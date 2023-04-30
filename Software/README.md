@@ -9,7 +9,7 @@ A few basic Embedded C Programs built to be run on Linux in case of Software and
     1. Parsing using argc, argv (A3)
 2. Device Drivers
     1. Read from Stdin and write to Stdout
-    1. Copy the text from in.txt into out.txt
+    1. Copy text from in.txt into out.txt
     1. Read text from echo.txt and write to another file & to Stdout
 3. Multi-Processing
     1. Demonstrate the usage of fork()
