@@ -28,8 +28,8 @@ void display(unisgned int counterVal)
         IO0SET = SevenSegTable[digit];
         IO1CLR = displaySel; // enabling that display
         delay_by(100000);
-        IO0CLR = SevenSegTable[digit];
         IO1SET = displaySel; // disabling that display
+        IO0CLR = SevenSegTable[digit];
         displaySel <<= 1;    // selecting the next display
         counterVal /= 10;    // removing the right most digit
     }
