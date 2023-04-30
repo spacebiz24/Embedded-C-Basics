@@ -46,6 +46,9 @@ void init_LCD()
 {
     for (int CommandIndex = 0; CommandIndex <= 3; CommandIndex++)
         LCD_Command(CommandIndex);
+    DisplayMsg("LCD Initialised");
+    delay_by(10000);
+    LCD_Command(0x01); // clearing the display
 }
 
 void DisplayMsg(char Msg[])
@@ -58,9 +61,6 @@ void main()
 {
     init_LPC();
     init_LCD();
-    DisplayMsg("LCD Initialised");
-    delay_by(10000);
-    LCD_Command(0x01); // clearing the display
     while (1)
         DisplayMsg("Hello World");
 }
