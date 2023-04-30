@@ -1,4 +1,4 @@
-// Read from the keyboard and write to the monitor
+// Read from Stdin and write to Stdout
 
 #include<stdio.h>
 #include<stdlib.h>
