@@ -66,6 +66,7 @@ void main()
     while (1)
     {
         WaveSel = IO0PIN & 0b11; // Obtaining values at P0.0 & 1
+        while (WaveSel == 0 | WaveSel > 0);
         if (WaveSel == 0)
             SineGen();
         else if (WaveSel == 1)
