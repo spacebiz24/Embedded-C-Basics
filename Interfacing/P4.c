@@ -1,4 +1,4 @@
-Keypad interfacing to a 7 segment display
+// Keypad interfacing to a 7 segment display
 
 #include "lpc214x.h"
 #include "stdint.h"
