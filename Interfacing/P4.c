@@ -43,7 +43,7 @@ int GetScancode()
     return NULL;
 }
 
-int Display(int ScanCode)
+Display(int ScanCode)
 {
     int CodeIndex;
     while (ScanCode != ScanCodeTable[CodeIndex])
