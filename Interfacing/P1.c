@@ -1,3 +1,5 @@
+// Blinking LEDs
+
 #include "lpc214x.h"
 #include "stdint.h"
 
