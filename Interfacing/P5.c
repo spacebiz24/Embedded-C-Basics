@@ -44,7 +44,7 @@ void TraingleGen()
 void SawtoothGen()
 {
     for (sampleVal = 0; sampleVal <= 1023; sampleVal++)
-          DACR = sampleVal << 6;
+        DACR = sampleVal << 6;
 }
 
 void SquareGen()
