@@ -23,7 +23,7 @@ unsigned int SevenSegTable[] = {0x3F /*0*/, 0x06 /*1*/, 0x5B /*2*/,
 
 void display(unisgned int counterVal)
 {
-    int displaySel = 0b1;
+    int displaySel = 0b1; // Initialise to right most display
     while (displaySel <= 0b1000)
     {
         int digit = counterVal % 10; // Getting right most digit
