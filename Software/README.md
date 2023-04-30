@@ -1,4 +1,5 @@
 # Software
+A few basic Embedded C Programs built to be run on Linux in case of Software and on the popular ARM7TDMI ( LPC2148 ) in case of Interfacing programs. The Programs are named `P#_#` where `#` denotes the specific program index as shown by the list below.
 
 1. Bit Manipulation
     1. Shift and logical operations
