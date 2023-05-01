@@ -1,3 +1,5 @@
+// Stepper motor
+
 #include "lpc214x.h"
 #include "stdint.h"
 #include "string.h"
@@ -10,8 +12,8 @@ void delay_by(unsigned int delayVal)
 void init_LPC()
 {
     PINSEL0 = 0x0; // P0.0,..., P0.15 -> GPIO
-    IO0DIR = 0xF;  // P0.0,..., P0.3 -> output
-    IO0CLR = 0xF;  // outputs -> 0
+    IO0DIR = 0xF;  // P0.0,..., P0.3 -> output (Coil magnetiser)
+    IO0CLR = 0xF;  // P0.0,..., P0.3 -> 0
 }
 
 void ClockwiseRotation(int ActiveCoil)
