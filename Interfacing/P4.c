@@ -24,7 +24,7 @@ void delay_by(unsigned int delayVal)
 void init_LPC()
 {
     PINSEL0 = 0x0;  // P0.0,..., P0.15 -> GPIO
-    IO0DIR = 0xFF0; // P0.0,..., P0.3 -> input, P0.4,...,P0.15 -> output
+    IO0DIR = 0xFF0; // P0.0,..., P0.3 -> input (Column), P0.4,..., P0.15 -> output(Row + Display)
 }
 
 int GetScancode()
