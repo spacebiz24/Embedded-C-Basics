@@ -7,8 +7,8 @@
 1. Signal generator using DAC
 1. Stepper motor ( Theory Only )
 1. ADC ( Theory Only )
-1. I2C ( Theory Only )
 1. UART ( Theory Only )
+1. I2C ( Theory Only )
 1. Keypad interfacing to an LCD ( Extra )
 
 ___
