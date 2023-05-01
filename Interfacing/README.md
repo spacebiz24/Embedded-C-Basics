@@ -1,7 +1,12 @@
 # Interfacing
 
 ## Trainer Kit
-<img src = "">
+<p align = "center">
+<img src = "Assets/LPC2148.jpg" width = "640" height = "480" align = "center"/>
+</p>
+<p align = "center">
+<em> LPC2148 Trainer Kit </em>
+</p>
 
 Create folders for each of the experiments with the source file and its circuit diagram
 
@@ -27,7 +32,8 @@ Create folders for each of the experiments with the source file and its circuit 
         - General
           - Core -> ARM7TDMI
           - Device -> NXP LPC2148
-      - Output converter -> O/P format -> Intel Extended HEX
+        - Output converter
+          - O/P format -> Intel Extended HEX
       - Add file -> lpc214x.h
  1. Write the code & save & make
  
@@ -35,7 +41,7 @@ Create folders for each of the experiments with the source file and its circuit 
  1. Connect the board & find its COM port to the computer
  1. Open Flash Magic
  1. Set the proper COM port & Hex file path
- 1. On the board - hit the SPDT switch & press reset (program mode)
+ 1. On the board - hit the DPDT switch & press reset (program mode)
  1. Click on Start on Flash Magic
  1. After downloading, release the SPDT switch & press reset (run mode)
  
