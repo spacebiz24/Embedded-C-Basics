@@ -12,15 +12,14 @@ void init_LPC()
     AD0CR = 0x200402;    // ADC opertational
 }
 
-int Analog2Digital()
+float Analog2Digital()
 {
     int result;
-    float voltage;
     AD0CR |= 1 << 24; // Begin conversion command
     while (!(AD0DR1 & 0x80000000)); // wait till conversion done
     result = AD0DR1 >> 6;
     result &= 0x3FF; // taking relavent data
-    voltage = ((result / 1023.0) * 3.3);
+    return ((result / 1023.0) * 3.3);
 }
 
 void Display(int voltage)
