@@ -2,7 +2,7 @@
 
 ## Trainer Kit
 <p align = "center">
-<img src = "Assets/LPC2148.jpg" width = "640" height = "480" align = "center"/>
+<img src = "Assets/LPC2148.jpg" width = "640" height = "640" align = "center"/>
 </p>
 <p align = "center">
 <em> LPC2148 Trainer Kit </em>
