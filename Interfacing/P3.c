@@ -17,9 +17,9 @@ void delay_by(unsigned int delayVal)
 void init_LPC()
 {
     PINSEL0 = 0x0; // P0.0,..., P0.15 -> GPIO
-    IO0DIR = 0xFF;  // P0.0,..., P0.7 -> output
+    IO0DIR = 0xFF;  // P0.0,..., P0.7 -> output (Data)
     PINSEL2 = 0x0; // P1.16,..., P1.31 -> GPIO
-    IO1DIR = 0x7;  // P1.16,..., P1.17 -> output
+    IO1DIR = 0x7;  // P1.16,..., P1.17 -> output (Control)
 }
 
 void LCD_Command(unsigned int Command)
