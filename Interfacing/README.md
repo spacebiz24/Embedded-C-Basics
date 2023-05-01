@@ -9,7 +9,6 @@
 1. ADC ( Theory Only )
 1. UART ( Theory Only )
 1. I2C ( Theory Only )
-1. Keypad interfacing to an LCD ( Extra )
 
 ___
 Made with :heart: by [spacebiz24](https://github.com/spacebiz24) and [Eloquencere](https://github.com/Eloquencere)
