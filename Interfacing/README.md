@@ -1,7 +1,7 @@
 # Interfacing
 
 ## Trainer Kit
-(Insert image here)
+<img src = "">
 
 Create folders for each of the experiments with the source file and its circuit diagram
 
@@ -22,14 +22,13 @@ Create folders for each of the experiments with the source file and its circuit 
 1. Create a folder with the experiment name with the "lpc214x.h" header file in it.
 1. Open IAR
 1. Project -> New -> Project templates -> C -> main
-1. Project name 
-      -> Options
-        -> General options
+1. Project Name
+      - Options 
+        - General
           - Core -> ARM7TDMI
           - Device -> NXP LPC2148
-        -> Output converter
-          - o/p format -> intel extended hex
-      -> Add file -> lpc214x.h
+      - Output converter -> O/P format -> Intel Extended HEX
+      - Add file -> lpc214x.h
  1. Write the code & save & make
  
  ### Dumping the executable
