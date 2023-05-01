@@ -1,3 +1,5 @@
+// ADC
+
 #include <lpc214x.h>
 #include <stdint.h>
 #include "LCD-16x2-8bit.h"
