@@ -21,7 +21,7 @@ void init_LPC()
     IO0DIR = ~0x0; // P0.0,..., P0.31 -> output
     PINSEL2 = 0x0; // P1.16,..., P1.31 -> GPIO
     IO1DIR = ~0x0; // all GPIO -> output
-    IO1SET = ~0x0; // Disabling all displays
+    IO1SET = 0xF; // Disabling all 4 displays
 }
 
 void display(unsigned int counterVal)
