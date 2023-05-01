@@ -18,10 +18,10 @@ void delay_by(unsigned int delayVal)
 void init_LPC()
 {
     PINSEL0 = 0x0; // P0.0,..., P0.15 -> GPIO
-    IO0DIR = ~0x0; // P0.0,..., P0.31 -> output
+    IO0DIR = ~0x0; // P0.0,..., P0.31 -> output (Display data)
     PINSEL2 = 0x0; // P1.16,..., P1.31 -> GPIO
-    IO1DIR = ~0x0; // all GPIO -> output
-    IO1SET = 0xF; // Disabling all 4 displays
+    IO1DIR = ~0x0; // all GPIO -> output (Display selector)
+    IO1SET = 0xF; // Disabling all 4 displays 
 }
 
 void display(unsigned int counterVal)
