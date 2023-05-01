@@ -4,7 +4,7 @@
 #include "stdint.h"
 #include "string.h"
 
-unsigned int LCDCommand[] = {0x38 /* 5*7 pixels/char & enable 2 rows */,
+unsigned int LCDCommand[] = {0x38 /* 5*7 pixels per char & enable 2 rows */,
                              0x0E /* Display on, cursor on */,
                              0x01 /* Clear display */,
                              0x06 /* Automatically increment cursor (after data entry) */};
