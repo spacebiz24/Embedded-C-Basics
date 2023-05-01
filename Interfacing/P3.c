@@ -24,7 +24,7 @@ void init_LPC()
 
 void LCD_Command(unsigned int Command)
 {
-    IO0SET = Command; // Load the command
+    IO0SET = Command; // Load command
     IO1SET = 0b100;   // E = 1, RS = 0 (Command)
     delay_by(500);
     IO1CLR = 0b100; // Clearing everything
@@ -35,7 +35,7 @@ void LCD_Data(unsigned int Data)
 {
     if (Data == " ")
         Data = 0x20;
-    IO0SET = Data;  // Load the data
+    IO0SET = Data;  // Load data
     IO1SET = 0b101; // E = 1, RS = 1 (Data)
     delay_by(500);
     IO1CLR = 0b101; // Clearing everything
@@ -54,7 +54,7 @@ void init_LCD()
 void DisplayMsg(char Msg[])
 {
     for (int character = 0; character < strlen(Msg); character++)
-        LCD_Data(character);
+        LCD_Data(Msg[character]);
 }
 
 void main()
