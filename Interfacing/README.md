@@ -1,6 +1,5 @@
 # Interfacing
 
-## Trainer Kit
 <p align = "center">
 <img src = "Assets/LPC2148.jpg" width = "640" height = "640" align = "center"/>
 </p>
@@ -43,7 +42,7 @@ Create folders for each of the experiments with the source file and its circuit 
  1. Set the proper COM port & Hex file path
  1. On the board - hit the DPDT switch & press reset (program mode)
  1. Click on Start on Flash Magic
- 1. After downloading, release the SPDT switch & press reset (run mode)
+ 1. After downloading, release the DPDT switch & press reset (run mode)
  
 ___
 Made with :heart: by [spacebiz24](https://github.com/spacebiz24) and [Eloquencere](https://github.com/Eloquencere)
