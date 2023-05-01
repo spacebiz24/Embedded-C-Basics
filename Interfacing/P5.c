@@ -11,7 +11,7 @@ void delay_by(unsigned int delayVal)
 void init_LPC()
 {
     PINSEL0 = 0x0; // P0.0,..., P0.15 -> GPIO
-    IO0DIR = 0x0; // All GPIO -> input
+    IO0DIR = 0x0; // All GPIO -> input (Wave selection)
     PINSEL1 = 0x80000; // P0.25 -> DAC output mode
 }
 
