@@ -42,19 +42,19 @@ void LCD_Data(unsigned int Data)
     IO0CLR = Data;
 }
 
+void LCD_Display(char Msg[])
+{
+    for (int character = 0; character < strlen(Msg); character++)
+        LCD_Data(Msg[character]);
+}
+
 void init_LCD()
 {
     for (int CommandIndex = 0; CommandIndex <= 3; CommandIndex++)
         LCD_Command(CommandIndex);
-    DisplayMsg("LCD Initialised");
+    LCD_Display("LCD Initialised");
     delay_by(10000);
     LCD_Command(0x01); // clear display
-}
-
-void DisplayMsg(char Msg[])
-{
-    for (int character = 0; character < strlen(Msg); character++)
-        LCD_Data(Msg[character]);
 }
 
 void main()
@@ -62,5 +62,5 @@ void main()
     init_LPC();
     init_LCD();
     while (1)
-        DisplayMsg("Hello World");
+        LCD_Display("Hello World");
 }
