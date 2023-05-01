@@ -33,7 +33,7 @@ int GetScancode()
     int CurrentRow = TopRow;
     while (CurrentRow <= BottomRow)
     {
-        IO0CLR = CurrentRow << 4; // Checking that row , Row is on P0.4
+        IO0CLR = CurrentRow << 4; // Checking that row , Row is from P0.4 onwards
         ColumnVal = IO0PIN & 0xF;
         if (ColumnVal != 0b1111) // found row
             return ((CurrentRow << 4) + ColumnVal);
@@ -48,7 +48,7 @@ Display(int ScanCode)
     int CodeIndex;
     while (ScanCode != ScanCodeTable[CodeIndex])
         CodeIndex++;
-    IO0SET = SevenSegTable[CodeIndex)] << 8; // Display is on P0.8 onwards
+    IO0SET = SevenSegTable[CodeIndex)] << 8; // Display is from P0.8 onwards
 }
 
 void main()
@@ -57,9 +57,9 @@ void main()
     int ScanCode;
     while (1)
     {
-        IO0CLR = 0xF0; // Sensitise the keyboard
+        IO0CLR = 0xF << 4; // Sensitise the keyboard, Rows are from P0.4 onwards
         while ((IO0PIN & 0xF) == 0b1111); // Wait for a keypress
-        IO0CLR = 0xF << 8; // Clearing the display
+        IO0CLR = 0xFF << 8; // Clearing the display, Display is from P0.8 onwards
         ScanCode = GetScanCode();
         if (ScanCode == NULL) // Couldn't locate the Key
             continue;
