@@ -24,7 +24,7 @@ void init_LPC()
     IO1SET = ~0x0; // Disabling all displays
 }
 
-void display(unisgned int counterVal)
+void display(unsigned int counterVal)
 {
     int CurrentDisplay = RightMostDisplay; // Initialise to right most display
     while (CurrentDisplay <= LeftMostDisplay)
