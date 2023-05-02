@@ -52,7 +52,7 @@ void init_LCD()
     for (int CommandIndex = 0; CommandIndex <= 3; CommandIndex++)
         LCD_Command(CommandIndex);
     LCD_Display("LCD Initialised");
-    delay_by(10000);
+    delay_by(100000);
     LCD_Command(0x01); // clear display
 }
 
