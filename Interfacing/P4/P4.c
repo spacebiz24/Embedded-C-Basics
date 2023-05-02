@@ -40,7 +40,7 @@ int GetScancode()
         IO0SET = CurrentRow << 4; // Turning on that row
         CurrentRow <<= 1;  // Going to the next row
     }
-    return NULL;
+    return 1;
 }
 
 void Display(int ScanCode)
@@ -61,7 +61,7 @@ void main()
         while ((IO0PIN & 0xF) == 0b1111); // Wait for a keypress
         IO0CLR = 0xFF << 8; // Clearing the display, Display is from P0.8 onwards
         ScanCode = GetScanCode();
-        if (ScanCode == NULL) // Couldn't locate the Key
+        if (ScanCode == 1) // Couldn't locate the Key
             continue;
         Display(ScanCode);
     }
