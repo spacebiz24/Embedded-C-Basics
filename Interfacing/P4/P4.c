@@ -29,14 +29,12 @@ void init_LPC()
 
 int GetScancode()
 {
-    int ColumnVal;
     int CurrentRow = TopRow;
     while (CurrentRow <= BottomRow)
     {
         IO0CLR = CurrentRow << 4; // Checking that row , Row is from P0.4 onwards
-        ColumnVal = IO0PIN & 0xF;
-        if (ColumnVal != 0b1111) // found row
-            return ((CurrentRow << 4) + ColumnVal);
+        if ((IO0PIN & 0xF) != 0b1111) // found row
+            return IO0PIN & 0xFF;
         IO0SET = CurrentRow << 4; // Turning on that row
         CurrentRow <<= 1;  // Going to the next row
     }
