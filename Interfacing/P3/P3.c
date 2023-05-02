@@ -1,6 +1,8 @@
 // Display a message on an LCD
 // Check LCD-16x2-8bit.h definition
 
+// Currently not working
+
 #include "lpc214x.h"
 #include "stdint.h"
 #include "string.h"
