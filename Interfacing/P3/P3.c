@@ -20,15 +20,15 @@ void init_LPC()
     PINSEL0 = 0x0; // P0.0,..., P0.15 -> GPIO
     IO0DIR = 0xFF;  // P0.0,..., P0.7 -> output (Data)
     PINSEL2 = 0x0; // P1.16,..., P1.31 -> GPIO
-    IO1DIR = 0x7;  // P1.16,..., P1.18 -> output (Control)
+    IO1DIR = 0x7 << 16;  // P1.16,..., P1.18 -> output (Control)
 }
 
 void LCD_Command(unsigned int Command)
 {
     IO0SET = Command; // Load command
-    IO1SET = 0b100;   // E = 1, RS = 0 (Command)
+    IO1SET = 0b100 << 16;   // E = 1, RS = 0 (Command)
     delay_by(500);
-    IO1CLR = 0b100; // Clearing everything
+    IO1CLR = 0b100 << 16; // Clearing everything
     IO0CLR = Command;
 }
 
@@ -37,9 +37,9 @@ void LCD_Data(unsigned int Data)
     if (Data == " ")
         Data = 0x20;
     IO0SET = Data;  // Load data
-    IO1SET = 0b101; // E = 1, RS = 1 (Data)
+    IO1SET = 0b101 << 16; // E = 1, RS = 1 (Data)
     delay_by(500);
-    IO1CLR = 0b101; // Clearing everything
+    IO1CLR = 0b101 << 16; // Clearing everything
     IO0CLR = Data;
 }
 
