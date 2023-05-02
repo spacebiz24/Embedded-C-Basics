@@ -21,7 +21,7 @@ int sampleIndex;
 
 void SineGen()
 {
-    for (sampleIndex = 0; sampleIndex < 22; sampleIndex++)
+    for (sampleIndex = 0; sampleIndex <= 21; sampleIndex++)
     {
         DACR = SineTable[sampleIndex] << 6;
         delay_by(100);
