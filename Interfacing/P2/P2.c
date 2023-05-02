@@ -21,7 +21,7 @@ void init_LPC()
     IO0DIR = ~0x0; // P0.0,..., P0.31 -> output (Display data)
     PINSEL2 = 0x0; // P1.16,..., P1.31 -> GPIO
     IO1DIR = ~0x0; // all GPIO -> output (Display selector)
-    IO1SET = 0xF; // Disabling all 4 displays 
+    IO1SET = 0xF << 16; // Disabling all 4 displays 
 }
 
 void display(unsigned int counterVal)
@@ -31,9 +31,9 @@ void display(unsigned int counterVal)
     {
         int digit = counterVal % 10; // Getting right most digit
         IO0SET = SevenSegTable[digit];
-        IO1CLR = CurrentDisplay; // enabling
-        delay_by(100000);
-        IO1SET = CurrentDisplay; // disabling
+        IO1CLR = CurrentDisplay << 16; // enabling
+        delay_by(10000);
+        IO1SET = CurrentDisplay << 16; // disabling
         IO0CLR = SevenSegTable[digit];
         counterVal /= 10;    // removing the right most digit
         CurrentDisplay <<= 1;    // Shifting to the next display
@@ -48,5 +48,6 @@ void main()
     {
         display(count);
         count++;
+        delay_by(10000);
     }
 }
