@@ -61,6 +61,6 @@ void main()
 {
     init_LPC();
     init_LCD();
-    while (1)
-        LCD_Display("Hello World");
+    LCD_Display("Hello World");
+    while (1);
 }
