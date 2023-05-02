@@ -21,12 +21,12 @@ int sampleIndex;
 
 void SineGen()
 {
-    for (sampleIndex = 0; sampleIndex <= 22; sampleIndex++)
+    for (sampleIndex = 0; sampleIndex < 22; sampleIndex++)
     {
         DACR = SineTable[sampleIndex] << 6;
         delay_by(100);
     }
-    for (sampleIndex = 22; sampleIndex >= 0; sampleIndex--)
+    for (sampleIndex = 21; sampleIndex >= 0; sampleIndex--)
     {
         DACR = SineTable[sampleIndex] << 6;
         delay_by(100);
@@ -39,7 +39,7 @@ void TraingleGen()
 {
     for (sampleVal = 0; sampleVal <= 1023; sampleVal++)
         DACR = sampleVal << 6;
-    for (sampleVal = 0; sampleVal >= 1023; sampleVal--)
+    for (sampleVal = 1023; sampleVal >= 0; sampleVal--)
         DACR = sampleVal << 6;
 }
 
