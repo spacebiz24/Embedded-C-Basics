@@ -32,10 +32,8 @@ void LCD_Command(unsigned int Command)
     IO0CLR = Command;
 }
 
-void LCD_Data(unsigned int Data)
+void LCD_Data(int Data)
 {
-    if (Data == " ")
-        Data = 0x20;
     IO0SET = Data;  // Load data
     IO1SET = 0b101 << 16; // E = 1, RS = 1 (Data)
     delay_by(500);
@@ -43,7 +41,7 @@ void LCD_Data(unsigned int Data)
     IO0CLR = Data;
 }
 
-void LCD_Display(char Msg[])
+void LCD_Display(unsigned int Msg[])
 {
     for (int character = 0; character < strlen(Msg); character++)
         LCD_Data(Msg[character]);
