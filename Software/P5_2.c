@@ -1,3 +1,5 @@
+// Using semaphores to prevent printing
+
 #include<stdio.h>
 #include<unistd.h>
 #include<stdlib.h>
