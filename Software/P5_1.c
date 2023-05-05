@@ -26,6 +26,7 @@ void* convert_thread()
     while(strncmp("stop", buffer, 4) != 0)
     {
         sleep(1);
+        printf("Converted text: ");
         for (int i = 0; i < strlen(buffer); i++)
             printf("%c", toupper(buffer[i]));
     }   
