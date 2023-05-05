@@ -22,7 +22,7 @@ A few basic Embedded C Programs built to be run on Linux in case of Software and
     1. Ignoring a specific signal function call
 5. Multithreading
     1. Creation of 2 threads for reading from Stdin and to convert to uppercase
-    1. Using semaphores to prevent undefined behaviour
+    1. Using semaphores to prevent printing
 
 ___
 Made with :heart: by [spacebiz24](https://github.com/spacebiz24) and [Eloquencere](https://github.com/Eloquencere)
