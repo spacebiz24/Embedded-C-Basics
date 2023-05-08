@@ -31,7 +31,7 @@ void init_LPC()
 
 int GetScancode()
 {
-    IO0SET = 0xF << 4;
+    IO0SET = 0xF << 4; // Insensitise all the rows
     int CurrentRow = TopRow;
     while (CurrentRow <= BottomRow)
     {
