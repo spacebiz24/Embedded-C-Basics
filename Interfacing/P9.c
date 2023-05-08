@@ -26,7 +26,6 @@ void start(int SlaveAddress)
     I2C0DAT = SlaveAddress; // Send the slave address on the line
     while ((I2C0CONSET & AA) == 0); // Wait for slave to acknowledge
     I2C0CONCLR = STA | AA; // Clear start condition
-    // need to send register internal address as well
 }
 
 void write(int Data)
