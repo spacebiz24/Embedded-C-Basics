@@ -43,8 +43,12 @@ void LCD_Data(int Data)
 
 void LCD_Display(unsigned int Msg[])
 {
-    for (int character = 0; character < strlen(Msg); character++)
+    int character = 0;
+    while(Msg[character] != '\0')
+    {
         LCD_Data(Msg[character]);
+        character++;
+    }
 }
 
 void init_LCD()
