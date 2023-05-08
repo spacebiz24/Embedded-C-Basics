@@ -15,7 +15,7 @@ void init_LPC()
 float Analog2Digital()
 {
     AD0CR |= 1 << 24; // Begin conversion command
-    while (!(AD0DR1 & 0x80000000)); // wait till conversion done
+    while ((AD0DR1 & 0x80000000) == 0); // wait till conversion done
     int result = AD0DR1 >> 6;
     result &= 0x3FF; // taking relavent data
     return ((result / 1023.0) * 3.3);
