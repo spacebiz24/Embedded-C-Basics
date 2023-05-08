@@ -31,6 +31,7 @@ void init_LPC()
 
 int GetScancode()
 {
+    IO0SET = 0xF << 4;
     int CurrentRow = TopRow;
     while (CurrentRow <= BottomRow)
     {
