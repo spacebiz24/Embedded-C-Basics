@@ -8,7 +8,7 @@
 #define TopRow 0b0001
 #define BottomRow 0b1000
 
-unsigned int ScanCodeTable[] = {0xEE /*0*/, 0xED /*1*/, 0xEB /*1*/, 0xE7 /*3*/,
+unsigned int ScanCodeTable[] = {0xEE /*0*/, 0xED /*1*/, 0xEB /*2*/, 0xE7 /*3*/,
                                 0xDE /*4*/, 0xDD /*5*/, 0xDB /*6*/, 0xD7 /*7*/,
                                 0xBE /*8*/, 0xBD /*9*/, 0xBB /*A*/, 0xB7 /*B*/,
                                 0x7E /*C*/, 0x7D /*D*/, 0x7B /*E*/, 0x77 /*F*/};
