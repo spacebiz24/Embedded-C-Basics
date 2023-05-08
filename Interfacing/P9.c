@@ -52,12 +52,12 @@ void stop()
 void main()
 {
     init_LPC();
-    
-    start(0x50);
+    int SlaveAddress = 0x50;
+    start(SlaveAddress << 1); // write mode
     write(0x75);
     stop();
 
-    start(0x50);
+    start((SlaveAddress << 1) | 1); // read mode
     int data = read();
     stop();
 }
