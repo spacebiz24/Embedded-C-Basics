@@ -35,6 +35,7 @@ int GetScancode()
     while (CurrentRow <= BottomRow)
     {
         IO0CLR = CurrentRow << 4; // Checking that row , Row is from P0.4 onwards
+        delay_by(2);
         if ((IO0PIN & 0xF) != 0b1111) // found row
             return IO0PIN & 0xFF;
         IO0SET = CurrentRow << 4; // Turning on that row
