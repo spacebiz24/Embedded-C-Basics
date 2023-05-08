@@ -43,17 +43,17 @@ void LCD_Data(int Data)
 
 void LCD_Display(unsigned int Msg[])
 {
-    int character = 0;
-    while(Msg[character] != '\0')
+    int CharacterIndex = 0;
+    while(Msg[CharacterIndex] != '\0')
     {
-        LCD_Data(Msg[character]);
-        character++;
+        LCD_Data(Msg[CharacterIndex]);
+        CharacterIndex++;
     }
 }
 
 void init_LCD()
 {
-    for (int CommandIndex = 0; CommandIndex <= 3; CommandIndex++)
+    for (int CommandIndex = 0; CommandIndex <= 2; CommandIndex++)
         LCD_Command(CommandIndex);
     LCD_Display("LCD Initialised");
     delay_by(100000);
