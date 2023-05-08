@@ -19,7 +19,7 @@ void init_LPC()
 
 void start(int SlaveAddress)
 {
-    I2C0CONSET = STA; // Start condition
+    I2C0CONSET = STA; // Start transmission
     while ((I2C0CONSET & SI) == 0); // Wait for state to change
     I2C0CONCLR = SI;
 
