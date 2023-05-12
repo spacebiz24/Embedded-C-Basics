@@ -1,7 +1,5 @@
 // Display a message on an LCD
 
-// Currently not working
-
 #include "lpc214x.h"
 #include "stdint.h"
 #include "string.h"
