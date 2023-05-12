@@ -32,7 +32,7 @@ void display(unsigned int counterVal)
         int digit = counterVal % 10; // Getting right most digit
         IO0SET = SevenSegTable[digit];
         IO1CLR = CurrentDisplay << 16; // enabling
-        delay_by(10000);
+        delay_by(1000);
         IO1SET = CurrentDisplay << 16; // disabling
         IO0CLR = SevenSegTable[digit];
         counterVal /= 10;    // removing the right most digit
@@ -44,10 +44,11 @@ void main()
 {
     init_LPC();
     int count = 0;
+    int DisplayCount;
     while (1)
     {
-        display(count);
+        for(DisplayCount = 0; DisplayCount <= 5_00_000; DisplayCount++)
+            display(count);
         count++;
-        delay_by(10000);
     }
 }
