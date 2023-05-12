@@ -47,7 +47,7 @@ void main()
     int DisplayCount;
     while (1)
     {
-        for(DisplayCount = 0; DisplayCount <= 5_00_000; DisplayCount++)
+        for(DisplayCount = 0; DisplayCount <= 50_000; DisplayCount++)
             display(count);
         count++;
     }
