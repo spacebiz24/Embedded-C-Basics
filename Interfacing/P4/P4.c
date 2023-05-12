@@ -62,7 +62,7 @@ void main()
         IO0CLR = 0xF << 4; // Sensitise the keyboard, Rows are from P0.4 onwards
         while ((IO0PIN & 0xF) == 0b1111); // Wait for a keypress
         IO0CLR = 0xFF << 8; // Clearing the display, Display is from P0.8 onwards
-        ScanCode = GetScanCode();
+        ScanCode = GetScancode();
         if (ScanCode == 1) // Couldn't locate the Key
             continue;
         Display(ScanCode);
