@@ -41,7 +41,7 @@ void LCD_Data(int Data)
     IO0CLR = Data;
 }
 
-void LCD_Display(unsigned int Msg[])
+void LCD_Display(char Msg[])
 {
     int CharacterIndex = 0;
     while(Msg[CharacterIndex] != '\0')
@@ -56,7 +56,7 @@ void init_LCD()
     for (int CommandIndex = 0; CommandIndex <= 2; CommandIndex++)
         LCD_Command(CommandIndex);
     LCD_Display("LCD Initialised");
-    delay_by(100000);
+    delay_by(500_000);
     LCD_Command(0x01); // clear display
 }
 
