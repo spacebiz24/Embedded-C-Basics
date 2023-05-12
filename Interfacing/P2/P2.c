@@ -44,10 +44,9 @@ void main()
 {
     init_LPC();
     int count = 0;
-    int DisplayCount;
     while (1)
     {
-        for(DisplayCount = 0; DisplayCount <= 50_000; DisplayCount++)
+        for(int DisplayCount = 0; DisplayCount <= 50_000; DisplayCount++)
             display(count);
         count++;
     }
