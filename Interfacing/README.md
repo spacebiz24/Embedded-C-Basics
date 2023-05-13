@@ -13,8 +13,8 @@ Create folders for each of the experiments with the source file and its circuit 
 
 1. Blinking LEDs
 1. 4 Digit counter
-1. Display a message on an LCD
-1. Keypad interfacing to a 7 segment display
+1. Display a message on the LCD
+1. Keypad interfacing to a 7 segment display - Currently *NOT* working
 1. Signal generator using DAC
 1. Stepper motor ( Theory Only )
 1. ADC ( Theory Only )
