@@ -6,7 +6,7 @@
 
 unsigned int LCDCommand[] = {0x38 /* 5*7 pixels per char & enable 2 rows */,
                              0x0E /* Display on, cursor on */,
-                             0x01 /* Clear display */};
+                             0x01 /* Clear display & return cursor to home */};
 
 void delay_by(unsigned int delayVal)
 {
