@@ -2,7 +2,6 @@
 
 #include "lpc214x.h"
 #include "stdint.h"
-#include "string.h"
 
 void delay_by(unsigned int delayVal)
 {
@@ -20,7 +19,9 @@ void ClockwiseRotation(int ActiveCoil)
 {
     while (ActiveCoil <= 0b1000)
     {
+        IO0SET = ActiveCoil;
         delay_by(10000);
+        IO0CLR = ActiveCoil;
         ActiveCoil <<= 1;
     }
 }
@@ -29,7 +30,9 @@ void AntiClockwiseRotation(int ActiveCoil)
 {
     while (ActiveCoil >= 0b0001)
     {
+        IO0SET = ActiveCoil;
         delay_by(10000);
+        IO0CLR = ActiveCoil;
         ActiveCoil >>= 1;
     }
 }
