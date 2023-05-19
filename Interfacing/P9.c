@@ -1,3 +1,5 @@
+// I2C
+
 #include <lpc214x.h>
 #include <stdint.h>
 
