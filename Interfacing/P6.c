@@ -41,7 +41,7 @@ void main()
 {
     init_LPC();
     int TotalRotations = 550;
-    int ActiveCoil = 0b001;
+    int ActiveCoil = 0b0001;
     while (1)
     {
         for (int Rotation = 0; Rotation <= TotalRotations; Rotation++)
