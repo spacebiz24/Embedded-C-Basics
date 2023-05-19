@@ -21,7 +21,7 @@ void ClockwiseRotation(int ActiveCoil)
     while (ActiveCoil <= 0b1000)
     {
         delay_by(10000);
-        ActiveCoil <<= 1;
+        ActiveCoil >>= 1;
     }
 }
 
@@ -30,7 +30,7 @@ void AntiClockwiseRotation(int ActiveCoil)
     while (ActiveCoil >= 0b0001)
     {
         delay_by(10000);
-        ActiveCoil >>= 1;
+        ActiveCoil <<= 1;
     }
 }
 
