@@ -14,7 +14,7 @@ void init_LPC()
     IO0DIR = 0x0; // All GPIO -> input (Wave selection)
     PINSEL1 = 0x80000; // P0.25 -> DAC output mode
 }
-
+// y = 512(1 + Sin(x)) (Start: -90, End: 90, Step: 8.1) (x-> deg)
 unsigned int SineTable[] = {0, 6, 25, 55, 97, 151, 211, 216, 282, 359, 436, 512,
                             591, 665, 742, 808, 873, 926, 968, 998, 1017, 1023};
 int sampleIndex;
