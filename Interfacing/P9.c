@@ -13,8 +13,8 @@
 void init_LPC()
 {
     PINSEL0 = 0b0101 << 4; // P0.2 -> SCL0, P0.3 -> SDA0
-    I2C0SCLH = 50;
-    I2C0SCLL = 50;
+    I2C0SCLH = 50; // Clock high duration
+    I2C0SCLL = 50; // Clock low duration
     I2C0CONCLR = EN | STA | STO | SI | AA; // Clear all flags
     I2C0CONSET = EN;                       // Enable I2C communication interface
 }
