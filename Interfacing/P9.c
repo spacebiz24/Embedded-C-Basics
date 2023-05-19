@@ -48,7 +48,6 @@ unsigned int read()
 void stop()
 {
     I2C0CONSET = STO; // Stop transmission
-    while (I2C0CONSET & STO); // Wait for Stop bit to be cleared
 }
 
 void main()
