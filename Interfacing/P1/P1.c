@@ -20,7 +20,7 @@ void main()
     int LEDIndex = 0;
     while (1)
     {
-        if (!LEDIndex) 
+        if (LEDIndex == 0) 
             LEDIndex = 0x80;
         IO0SET = LEDIndex;
         delay_by(10000);
