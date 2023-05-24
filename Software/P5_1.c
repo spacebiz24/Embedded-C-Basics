@@ -35,7 +35,7 @@ void* convert_thread()
 
 void main()
 {
-    void* ReturnInfo;
+    void* ExitInfo;
     pthread_t InputThread, ConvertThread; // thread handles
 
     printf("Enter some text to convert to uppercase , if 'stop' is typed the program will exit\n");
@@ -43,8 +43,8 @@ void main()
     pthread_create(&InputThread, NULL, &input_thread, NULL);
     pthread_create(&ConvertThread, NULL, &convert_thread, NULL);
 
-    pthread_join(InputThread, &ReturnInfo);
-    printf("%s", (char*) ReturnInfo);
-    pthread_join(ConvertThread, &ReturnInfo);
-    printf("%s", (char*) ReturnInfo);
+    pthread_join(InputThread, &ExitInfo);
+    printf("%s", (char*) ExitInfo);
+    pthread_join(ConvertThread, &ExitInfo);
+    printf("%s", (char*) ExitInfo);
 }
