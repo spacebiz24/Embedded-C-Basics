@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	char *message;
+	char* message;
 	pid_t Creating_Process = fork();
 	
 	switch (Creating_Process)
