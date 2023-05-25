@@ -4,7 +4,7 @@
 #include "stdint.h"
 #include "string.h"
 
-unsigned int LCDCommand[] = {0x38 /* 5*7 pixels per char & enable 2 rows */,
+unsigned int InitCommand[] = {0x38 /* 5*7 pixels per char & enable 2 rows */,
                              0x0E /* Display on, cursor on */,
                              0x01 /* Clear display & return cursor to home */};
 
@@ -21,47 +21,47 @@ void init_LPC()
     IO1DIR = 0b111 << 16;  // P1.16,..., P1.18 -> output (Control)
 }
 
-void LCD_Command(unsigned int Command)
+void LCD_command(unsigned int command)
 {
-    IO0SET = Command; // Load command
+    IO0SET = command; // Load command
     IO1SET = 0b100 << 16;   // E = 1, RS = 0 (Command)
     delay_by(500);
     IO1CLR = 0b100 << 16; // Clearing everything
-    IO0CLR = Command;
+    IO0CLR = command;
 }
 
-void LCD_Data(int Data)
+void LCD_data(int data)
 {
-    IO0SET = Data;  // Load data
+    IO0SET = data;  // Load data
     IO1SET = 0b101 << 16; // E = 1, RS = 1 (Data)
     delay_by(500);
     IO1CLR = 0b101 << 16; // Clearing everything
-    IO0CLR = Data;
+    IO0CLR = data;
 }
 
-void LCD_Display(char Msg[])
+void LCD_display(char Msg[])
 {
-    int CharacterIndex = 0;
-    while(Msg[CharacterIndex] != '\0')
+    int characterIndex = 0;
+    while(Msg[characterIndex] != '\0')
     {
-        LCD_Data(Msg[CharacterIndex]);
-        CharacterIndex++;
+        LCD_data(Msg[characterIndex]);
+        characterIndex++;
     }
 }
 
 void init_LCD()
 {
-    for (int CommandIndex = 0; CommandIndex <= 2; CommandIndex++)
-        LCD_Command(LCDCommand[CommandIndex]);
-    LCD_Display("LCD Initialised");
+    for (int commandIndex = 0; commandIndex <= 2; commandIndex++)
+        LCD_command(InitCommand[commandIndex]);
+    LCD_display("LCD Initialised");
     delay_by(500000);
-    LCD_Command(0x01); // clear display
+    LCD_command(0x01); // clear display
 }
 
 void main()
 {
     init_LPC();
     init_LCD();
-    LCD_Display("Hello World");
+    LCD_display("Hello World");
     while (1);
 }
