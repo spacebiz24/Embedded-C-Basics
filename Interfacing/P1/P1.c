@@ -17,14 +17,16 @@ void init_LPC()
 void main()
 {
     init_LPC();
-    int LEDIndex = 0;
+    int LEDIndex;
     while (1)
     {
-        if (LEDIndex == 0) 
-            LEDIndex = 0x80;
-        IO0SET = LEDIndex;
-        delay_by(10000);
-        IO0CLR = LEDIndex; // Turning off that LED
-        LEDIndex >>= 1;
+        LEDIndex = 0x80;
+        while(LEDIndex > 0)
+        {
+            IO0SET = LEDIndex;
+            delay_by(10000);
+            IO0CLR = LEDIndex; // Turning off that LED
+            LEDIndex >>= 1;
+        } 
     }
 }
