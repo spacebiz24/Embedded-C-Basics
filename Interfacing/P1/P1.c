@@ -3,9 +3,9 @@
 #include "lpc214x.h"
 #include "stdint.h"
 
-void delay_by(unsigned int delayVal)
+void delay_by(unsigned int DelayVal)
 {
-    for (int i = 0; i <= delayVal; i++);
+    for (int i = 0; i <= DelayVal; i++);
 }
 
 void init_LPC()
@@ -27,6 +27,6 @@ void main()
             delay_by(10000);
             IO0CLR = LEDIndex; // Turning off that LED
             LEDIndex >>= 1;
-        } 
+        }
     }
 }
