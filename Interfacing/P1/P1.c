@@ -3,9 +3,9 @@
 #include "lpc214x.h"
 #include "stdint.h"
 
-void delay_by(unsigned int DelayVal)
+void delay_by(unsigned int delayVal)
 {
-    for (int i = 0; i <= DelayVal; i++);
+    for (int i = 0; i <= delayVal; i++);
 }
 
 void init_LPC()
