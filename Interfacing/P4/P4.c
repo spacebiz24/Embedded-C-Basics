@@ -59,10 +59,11 @@ void main()
     while (1)
     {
         IO0CLR = 0xF << 4; // Sensitise the keyboard, Rows are from P0.4 onwards
-        while ((IO0PIN & 0xF) == 0b1111); // Wait for a keypress
+        while((IO0PIN & 0xF) == 0b1111); // Wait for a keypress
         int ScanCode = GetScancode();
         if (ScanCode == 1) // Couldn't locate the Key
             continue;
         Display(ScanCode);
+        while((IO0PIN & 0xFF) == ScanCode); // Wait for key removal
     }
 }
