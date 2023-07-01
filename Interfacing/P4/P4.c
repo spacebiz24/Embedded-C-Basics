@@ -1,9 +1,6 @@
 // Keypad interfacing to a 7 segment display
 
-// Currently not working
-
 #include "lpc214x.h"
-#include "stdint.h"
 
 #define TopRow 0b0001
 #define BottomRow 0b1000
