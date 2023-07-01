@@ -1,7 +1,6 @@
 // Display a message on the LCD
 
 #include "lpc214x.h"
-#include "stdint.h"
 #include "string.h"
 
 unsigned int InitCommand[] = {0x38 /* 5*7 pixels per char & enable 2 rows */,
@@ -54,7 +53,7 @@ void init_LCD()
     for (int commandIndex = 0; commandIndex <= 2; commandIndex++)
         LCD_command(InitCommand[commandIndex]);
     LCD_display("LCD Initialised");
-    delay_by(500000);
+    delay_by(500'000);
     LCD_command(0x01); // clear display
 }
 
