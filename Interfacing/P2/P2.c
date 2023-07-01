@@ -1,7 +1,6 @@
 // 4 Digit counter
 
 #include "lpc214x.h"
-#include "stdint.h"
 
 #define RightMostDisplay 0b0001
 #define LeftMostDisplay 0b1000
