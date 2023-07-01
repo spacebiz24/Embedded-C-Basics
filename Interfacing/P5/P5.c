@@ -1,7 +1,6 @@
 // Signal generator using DAC
 
 #include "lpc214x.h"
-#include "stdint.h"
 
 void delay_by(unsigned int delayVal)
 {
