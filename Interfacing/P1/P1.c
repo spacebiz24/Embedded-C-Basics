@@ -1,7 +1,6 @@
 // Blinking LEDs
 
 #include "lpc214x.h"
-#include "stdint.h"
 
 void delay_by(unsigned int delayVal)
 {
@@ -24,7 +23,7 @@ void main()
         while(LEDIndex > 0)
         {
             IO0SET = LEDIndex;
-            delay_by(10000);
+            delay_by(10'000);
             IO0CLR = LEDIndex; // Turning off that LED
             LEDIndex >>= 1;
         }
