@@ -16,10 +16,10 @@ void init_LPC()
 // y = 512(1 + Sin(x)) (Start: -90, End: 90, Step: 8.1) (x-> deg)
 unsigned int SineTable[] = {0, 6, 25, 55, 97, 151, 211, 216, 282, 359, 436, 512,
                             591, 665, 742, 808, 873, 926, 968, 998, 1017, 1023};
-int sampleIndex;
 
 void SineGen()
 {
+    int sampleIndex;
     for (sampleIndex = 0; sampleIndex <= 21; sampleIndex++)
     {
         DACR = SineTable[sampleIndex] << 6;
