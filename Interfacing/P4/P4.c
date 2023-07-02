@@ -15,11 +15,6 @@ unsigned int SevenSegTable[] = {0x3F /*0*/, 0x06 /*1*/, 0x5B /*2*/, 0x4F /*3*/,
                                 0x7F /*8*/, 0x6F /*9*/, 0x77 /*A*/, 0x7C /*B*/,
                                 0x39 /*C*/, 0x5E /*D*/, 0x79 /*E*/, 0x71 /*F*/};
 
-void delay_by(unsigned int delayVal)
-{
-    for (int i = 0; i <= delayVal; i++);
-}
-
 void init_LPC()
 {
     PINSEL0 = 0x0;  // P0.0,..., P0.15 -> GPIO
