@@ -4,7 +4,7 @@
 
 void delay_by(unsigned int delayVal)
 {
-    for (int i = 0; i <= delayVal; i++);
+    for (static int i = 0; i <= delayVal; i++);
 }
 
 void init_LPC()
