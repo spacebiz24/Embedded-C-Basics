@@ -12,7 +12,7 @@ unsigned int SevenSegTable[] = {0x3F /*0*/, 0x06 /*1*/, 0x5B /*2*/, 0x4F /*3*/,
 
 void delay_by(unsigned int delayVal)
 {
-    for (int i = 0; i <= DelayVal; i++);
+    for (static int i = 0; i <= DelayVal; i++);
 }
 
 void init_LPC()
@@ -46,7 +46,7 @@ void main()
     int count = 0;
     while (1)
     {
-        for(int displayDuration = 0; displayDuration <= 50; displayDuration++)
+        for(static int displayDuration = 0; displayDuration <= 50; displayDuration++)
             display(count);
         count++;
     }
