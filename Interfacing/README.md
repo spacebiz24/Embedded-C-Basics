@@ -7,14 +7,12 @@
 <em> LPC2148 Trainer Kit </em>
 </p>
 
-Create folders for each of the experiments with the source file and its circuit diagram
-
 ## Programs List
 
 1. Blinking LEDs
-1. 4 Digit counter
+1. 4 Digit Counter
 1. Display a message on the LCD
-1. Keypad interfacing to a 7 segment display - Currently *NOT* working
+1. Keypad interfacing to a 7-segment display - Currently *NOT* working
 1. Signal generator using DAC
 1. Stepper motor ( Theory Only )
 1. ADC ( Theory Only )
@@ -23,7 +21,7 @@ Create folders for each of the experiments with the source file and its circuit 
 
 ## Procedure
 ### Generating the executable
-1. Create a folder with the experiment name with the "lpc214x.h" header file in it.
+1. Create a folder with the experiment name and the "lpc214x.h" header file.
 1. Open IAR
 1. Project -> New -> Project templates -> C -> main
 1. Project Name
